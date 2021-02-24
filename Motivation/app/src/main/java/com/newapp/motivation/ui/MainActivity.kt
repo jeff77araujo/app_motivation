@@ -1,5 +1,6 @@
 package com.newapp.motivation.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -28,12 +29,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         mSecurityPreferences = SecurityPreferences(this)
         var name = mSecurityPreferences.getString(MotivationConstants.KEY.PERSON_NAME)
-        textName.text = "Olá, $name"
+        textName.text = "Olá, $name!"
 
         buttonNewPhrase.setOnClickListener(this)
         imageAll.setOnClickListener(this)
         imageHappy.setOnClickListener(this)
         imageMorning.setOnClickListener(this)
+
+        buttonNewName.setOnClickListener {
+            val intent = Intent(this, SplashActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onClick(view: View) {
@@ -45,6 +51,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         } else if (id in listFilter) {
             handleFilter(id)
         }
+
     }
 
     private fun handleFilter(id: Int) {
@@ -72,4 +79,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun handleNewPhrase() {
         textPhrase.text = Mock().getPhrase(mPhraseFilter)
     }
+
 }

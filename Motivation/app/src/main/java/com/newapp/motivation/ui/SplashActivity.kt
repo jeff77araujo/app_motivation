@@ -24,7 +24,18 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         if (supportActionBar != null) { supportActionBar!!.hide() }
 
         buttonSave.setOnClickListener(this)
+
+        verifyName()
     }
+
+    private fun verifyName() {
+        val name = mSecurityPreferences.getString(MotivationConstants.KEY.PERSON_NAME)
+        if (name.isNotEmpty()) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
 
     override fun onClick(view: View) {
         val id = view.id

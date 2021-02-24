@@ -15,28 +15,19 @@
 
         <ImageView
             android:id="@+id/imageAll"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
+            style="@style/style_icons"
             android:src="@drawable/ic_all"
             app:tint="@color/white" />
 
         <ImageView
             android:id="@+id/imageHappy"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
+            style="@style/style_icons"
             android:src="@drawable/ic_happy"
             app:tint="@color/white" />
 
         <ImageView
             android:id="@+id/imageMorning"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
+            style="@style/style_icons"
             android:src="@drawable/ic_sun"
             app:tint="@color/white" />
 
@@ -44,44 +35,38 @@
 
     <TextView
         android:id="@+id/textName"
+        style="@style/style_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/linearMenu"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
+        android:text="Hello World!" />
+
+    <Button
+        android:id="@+id/buttonNewName"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textName"
         android:layout_centerHorizontal="true"
-        android:text="Hello World!"
-        android:textSize="20sp" />
+        android:text="Mudar nome"
+        android:textSize="10dp"
+        android:backgroundTint="#7F2A68"/>
 
     <TextView
         android:id="@+id/textPhrase"
+        style="@style/style_phrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="8dp"
-        android:gravity="center"
-        android:text="Frase"
-        android:textSize="25sp" />
+        android:text="Frase" />
 
     <View
-        android:layout_width="128dp"
-        android:layout_height="3dp"
-        android:layout_below="@id/textPhrase"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:background="#7F2A68"/>
+        style="@style/style_view"
+        android:layout_width="150dp"
+        android:layout_height="3dp" />
 
     <Button
         android:id="@+id/buttonNewPhrase"
+        style="@style/style_button_new_phrase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp"
-        android:padding="16dp"
-        android:backgroundTint="#7F2A68"
-        android:textSize="16sp"
-        android:text="Nova frase"/>
+        android:text="Nova frase" />
 
 </RelativeLayout>

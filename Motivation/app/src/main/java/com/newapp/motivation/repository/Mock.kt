@@ -30,7 +30,7 @@ class Mock {
     fun getPhrase(categoryId: Int): String {
 
         val filtered = mListPhrases.filter { (it.category == categoryId || categoryId == ALL)}
-        var rand = Random.nextInt(mListPhrases.size)
+        var rand = Random.nextInt(filtered.size)
 
         return filtered[rand].description
     }
